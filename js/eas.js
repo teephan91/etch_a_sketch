@@ -16,8 +16,8 @@ for (let i = 0; i < rows.length; i++) {
 
 const columns = document.querySelectorAll('.column');
 
-columns.forEach((column) => {
-    column.addEventListener('mouseenter', () => {
-        column.classList.add('enter');
+columns.forEach((square) => {
+    square.addEventListener('mouseenter', () => {
+        square.classList.add('enter');
     });
 });
