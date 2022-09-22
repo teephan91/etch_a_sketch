@@ -13,3 +13,11 @@ for (let i = 0; i < rows.length; i++) {
         rows[i].appendChild(column).className = 'column';
     }
 }
+
+const columns = document.querySelectorAll('.column');
+
+columns.forEach((column) => {
+    column.addEventListener('mouseenter', () => {
+        column.classList.add('enter');
+    });
+});
