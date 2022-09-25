@@ -1,5 +1,8 @@
 const container = document.querySelector('#container');
 
+container.addEventListener('mousedown', startSketch);
+container.addEventListener('mouseup', stopSketch);
+
 for (let z = 0; z < 16; z++) {
     const row = document.createElement('div');
     container.appendChild(row).className = 'row';
@@ -17,7 +20,21 @@ for (let i = 0; i < rows.length; i++) {
 const columns = document.querySelectorAll('.column');
 
 columns.forEach((square) => {
-    square.addEventListener('mouseenter', () => {
-        square.classList.add('enter');
-    });
+    square.addEventListener('mousedown', colorSquare);
 });
+
+function colorSquare() {
+    this.classList.add('color-square');
+}
+
+function startSketch() {
+    columns.forEach((square) => {
+        square.addEventListener('mouseover', colorSquare);
+    });
+}
+
+function stopSketch() {
+    columns.forEach((square) => {
+        square.removeEventListener('mouseover', colorSquare);
+    });
+}
