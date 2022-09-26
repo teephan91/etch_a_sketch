@@ -3,20 +3,22 @@ const container = document.querySelector('#container');
 
 container.addEventListener('mousedown', startSketch);
 container.addEventListener('mouseup', stopSketch);
- 
-// create 16x16 grid
-for (let z = 0; z < 16; z++) {
-    const row = document.createElement('div');
-    container.appendChild(row).className = 'row';
+
+// create custom grid
+function createGrid(size) {
+for (let z = 0; z < size; z++) {
+    const newRow = document.createElement('div');
+    container.appendChild(newRow).className = 'row';
 }
 
-const rows = document.getElementsByClassName('row');
+const newRows = document.getElementsByClassName('row');
 
-for (let i = 0; i < rows.length; i++) {
-    for (let j = 0; j < 16; j++) {
+for (let i = 0; i < newRows.length; i++) {
+    for (let j = 0; j < size; j++) {
         const column = document.createElement('div');
-        rows[i].appendChild(column).className = 'column';
+        newRows[i].appendChild(column).className = 'column';
     }
+}
 }
 
 const columns = document.querySelectorAll('.column');
@@ -50,5 +52,24 @@ const btn = document.querySelector('#btn');
 btn.addEventListener('click', askGridSize);
 
 function askGridSize(size) {
-   size = prompt('How many squares per side?');
+    size = prompt('How many squares per side?');
+    if (size === null) {
+        return;
+    } else if ((size > 64) || (size < 5)) {
+        alert('Please enter a size from 5 to 64.');
+        askGridSize();
+    } else if (!(+size)) {
+        alert('Please enter a size from 5 to 64. And it has to be a NUMBER.');
+        askGridSize();
+    } else {
+        removeGrid();
+        createGrid(size);
+    }
+}
+// remove old grid before adding new grid
+function removeGrid() {
+    const oldRows = document.querySelectorAll('.row');
+    for (let oldRow of oldRows) {
+        oldRow.remove();
+    }
 }
