@@ -19,6 +19,15 @@ for (let i = 0; i < newRows.length; i++) {
         newRows[i].appendChild(column).className = 'column';
     }
 }
+
+// maintain the max dimensions of grid regardless of size
+const chosenDimensions = 600;
+const columns = document.getElementsByClassName('column');
+
+for (let square of columns) {
+    square.style.width = chosenDimensions / size + "px";
+    square.style.height = chosenDimensions / size + "px";
+}
 }
 
 const columns = document.querySelectorAll('.column');
