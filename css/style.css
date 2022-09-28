@@ -2,10 +2,18 @@
     display: flex;
 }
 
-.column {   
-    border: 1px solid black;
-    padding: 20px;
-    margin: 0 -1px -1px 0;
+.column {  
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+
+.column:first-child {
+    border-top: 1px solid black;
+}
+
+.row:last-child {
+    border-right: 1px solid black;
 }
 
 .color-square {
