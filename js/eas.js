@@ -1,6 +1,9 @@
 // add eventlistener to the main container
 const container = document.querySelector('#container');
 
+// default grid size
+createGrid(16);
+
 // create custom grid
 function createGrid(size) {
 for (let z = 0; z < size; z++) {
