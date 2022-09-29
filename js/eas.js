@@ -1,9 +1,6 @@
 // add eventlistener to the main container
 const container = document.querySelector('#container');
 
-container.addEventListener('mousedown', startSketch);
-container.addEventListener('mouseup', stopSketch);
-
 // create custom grid
 function createGrid(size) {
 for (let z = 0; z < size; z++) {
@@ -27,32 +24,33 @@ const columns = document.getElementsByClassName('column');
 for (let square of columns) {
     square.style.width = chosenDimensions / size + "px";
     square.style.height = chosenDimensions / size + "px";
-}
-}
-
-const columns = document.querySelectorAll('.column');
-
-columns.forEach((square) => {
+    // color the square when first click on the grid
     square.addEventListener('mousedown', colorSquare);
-});
+}
+
+// start sketching function
+function startSketch() {
+    for (let square of columns) {
+        square.addEventListener('mouseover', colorSquare);
+    };
+
+}
+
+// stop sketching function
+function stopSketch() {
+    for (let square of columns) {
+        square.removeEventListener('mouseover', colorSquare);
+    };
+}
+
+// events listeners for the parent container instead of each square
+container.addEventListener('mousedown', startSketch);
+container.addEventListener('mouseup', stopSketch);
+}
 
 // color the square
 function colorSquare() {
     this.classList.add('color-square');
-}
-
-// start sketching
-function startSketch() {
-    columns.forEach((square) => {
-        square.addEventListener('mouseover', colorSquare);
-    });
-}
-
-// stop sketching
-function stopSketch() {
-    columns.forEach((square) => {
-        square.removeEventListener('mouseover', colorSquare);
-    });
 }
 
 // onclick button to ask about the grid size
@@ -75,6 +73,7 @@ function askGridSize(size) {
         createGrid(size);
     }
 }
+
 // remove old grid before adding new grid
 function removeGrid() {
     const oldRows = document.querySelectorAll('.row');
