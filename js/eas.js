@@ -1,11 +1,11 @@
-// add eventlistener to the main container
 const container = document.querySelector('#container');
 
 // default grid size
 createGrid(16);
 
-// create custom grid
 function createGrid(size) {
+
+// create custom grid based on size
 for (let z = 0; z < size; z++) {
     const newRow = document.createElement('div');
     container.appendChild(newRow).className = 'row';
@@ -20,7 +20,7 @@ for (let i = 0; i < newRows.length; i++) {
     }
 }
 
-// maintain the max dimensions of grid regardless of size
+// maintain the chosen dimensions of grid regardless of size
 const chosenDimensions = 600;
 const columns = document.getElementsByClassName('column');
 
@@ -31,7 +31,7 @@ for (let square of columns) {
     square.addEventListener('mousedown', colorSquare);
 }
 
-// start sketching function
+// sketching functions + event listeners for parent node '#container'
 function startSketch() {
     for (let square of columns) {
         square.addEventListener('mouseover', colorSquare);
@@ -39,14 +39,12 @@ function startSketch() {
 
 }
 
-// stop sketching function
 function stopSketch() {
     for (let square of columns) {
         square.removeEventListener('mouseover', colorSquare);
     };
 }
 
-// events listeners for the parent container instead of each square
 container.addEventListener('mousedown', startSketch);
 container.addEventListener('mouseup', stopSketch);
 }
