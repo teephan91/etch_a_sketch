@@ -55,9 +55,9 @@ function colorSquare() {
 }
 
 // onclick button to ask about the grid size
-const btn = document.querySelector('#btn');
+const btnSize = document.querySelector('#size');
 
-btn.addEventListener('click', askGridSize);
+btnSize.addEventListener('click', askGridSize);
 
 function askGridSize(size) {
     size = prompt('How many squares per side?');
