@@ -82,3 +82,16 @@ function removeGrid() {
         oldRow.remove();
     }
 }
+
+// clear sketching on the grid
+const btnClear = document.querySelector('#clear');
+
+btnClear.addEventListener('click', clearGrid);
+
+function clearGrid() {
+    const colorSquares = document.querySelectorAll('.color-square');
+
+    for (let square of colorSquares) { 
+        square.classList.remove('color-square');
+    }
+}
