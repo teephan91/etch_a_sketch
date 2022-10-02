@@ -92,12 +92,13 @@ function clearGrid() {
 }
 
 // choose color to sketch
+let defaultColor = "#1FB24B";
 const btnColor = document.querySelector('#color');
 
 btnColor.addEventListener('input', (color) => {
-    btnColor = color.target.value;
+    defaultColor = color.target.value;
 });
 
 function colorSquare() {
-    this.style.backgroundColor = btnColor.value;
+    this.style.backgroundColor = defaultColor;
 }
