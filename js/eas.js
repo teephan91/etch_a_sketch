@@ -84,10 +84,10 @@ const btnClear = document.querySelector('#clear');
 btnClear.addEventListener('click', clearGrid);
 
 function clearGrid() {
-    const colorSquares = document.querySelectorAll('.color-square');
+    const allSquares = document.getElementsByClassName('column');
 
-    for (let square of colorSquares) { 
-        square.classList.remove('color-square');
+    for (let square of allSquares) { 
+        square.style.backgroundColor = '#FFFFFF';
     }
 }
 
