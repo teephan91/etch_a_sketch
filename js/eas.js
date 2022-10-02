@@ -49,11 +49,6 @@ container.addEventListener('mousedown', startSketch);
 container.addEventListener('mouseup', stopSketch);
 }
 
-// color the square
-function colorSquare() {
-    this.classList.add('color-square');
-}
-
 // onclick button to ask about the grid size
 const btnSize = document.querySelector('#size');
 
@@ -94,4 +89,15 @@ function clearGrid() {
     for (let square of colorSquares) { 
         square.classList.remove('color-square');
     }
+}
+
+// choose color to sketch
+const btnColor = document.querySelector('#color');
+
+btnColor.addEventListener('input', (color) => {
+    btnColor = color.target.value;
+});
+
+function colorSquare() {
+    this.style.backgroundColor = btnColor.value;
 }
