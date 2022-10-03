@@ -55,7 +55,7 @@ const btnSize = document.querySelector('#size');
 btnSize.addEventListener('click', askGridSize);
 
 function askGridSize(size) {
-    size = prompt('How many squares per side?');
+    size = prompt('How many squares per side, only from 5 to 64?');
     if (size === null) {
         return;
     } else if ((size > 64) || (size < 5)) {
