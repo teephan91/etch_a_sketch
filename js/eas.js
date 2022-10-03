@@ -1,4 +1,4 @@
-const container = document.querySelector('#container');
+const grid = document.querySelector('#grid');
 
 // default grid size
 createGrid(16);
@@ -8,7 +8,7 @@ function createGrid(size) {
 // create custom grid based on size
 for (let z = 0; z < size; z++) {
     const newRow = document.createElement('div');
-    container.appendChild(newRow).className = 'row';
+    grid.appendChild(newRow).className = 'row';
 }
 
 const newRows = document.getElementsByClassName('row');
@@ -31,7 +31,7 @@ for (let square of columns) {
     square.addEventListener('mousedown', colorSquare);
 }
 
-// sketching functions + event listeners for parent node '#container'
+// sketching functions + event listeners for parent node '#grid'
 function startSketch() {
     for (let square of columns) {
         square.addEventListener('mouseover', colorSquare);
@@ -45,8 +45,8 @@ function stopSketch() {
     };
 }
 
-container.addEventListener('mousedown', startSketch);
-container.addEventListener('mouseup', stopSketch);
+grid.addEventListener('mousedown', startSketch);
+grid.addEventListener('mouseup', stopSketch);
 }
 
 // onclick button to ask about the grid size
