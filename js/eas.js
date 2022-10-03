@@ -21,7 +21,7 @@ for (let i = 0; i < newRows.length; i++) {
 }
 
 // maintain the chosen dimensions of grid regardless of size
-const chosenDimensions = 600;
+const chosenDimensions = 550;
 const columns = document.getElementsByClassName('column');
 
 for (let square of columns) {

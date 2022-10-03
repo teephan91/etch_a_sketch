@@ -56,7 +56,7 @@ h1 {
 
 #buttons-section {
     display: flex;
-    width: 600px;
+    width: 550px;
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
