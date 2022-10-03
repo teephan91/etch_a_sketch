@@ -92,7 +92,7 @@ function clearGrid() {
 }
 
 // choose color to sketch
-let defaultColor = "#1FB24B";
+let defaultColor = "#000000";
 const btnColor = document.querySelector('#color');
 
 btnColor.addEventListener('input', (color) => {
