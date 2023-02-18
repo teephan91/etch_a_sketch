@@ -1,4 +1,4 @@
-# Etch_A_Sketch
+# Etch-A-Sketch
 ![EAS_screenshot](https://user-images.githubusercontent.com/101987153/219825218-c5679419-110c-4bf1-9286-0f5863a15713.JPG)
 
 ## About
