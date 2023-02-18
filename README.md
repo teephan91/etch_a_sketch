@@ -7,9 +7,9 @@ This webpage is an online Etch-A-Sketch. Users can draw on the sketchpad using t
 **[CLICK HERE TO VIEW THE PROJECT](https://teephan91.github.io/etch_a_sketch/)**
 
 ## Technologies
-- [x] ![HTML](https://img.shields.io/badge/-HTML-000?style=flat&logo=html5&logoColor=394148&color=fac60c) ► **13.8%** 
+- [x] ![HTML](https://img.shields.io/badge/-HTML-000?style=flat&logo=html5&logoColor=394148&color=fac60c) ► **17.3%** 
 - [x] ![CSS](https://img.shields.io/badge/-CSS-000?style=flat&logo=css3&logoColor=394148&color=fac60c) ► **31.6%** 
-- [x] ![JavaScript](https://img.shields.io/badge/-JavaScript-000?style=flat&logoColor=394148&logo=javascript&color=fac60c) ► **54.6%**
+- [x] ![JavaScript](https://img.shields.io/badge/-JavaScript-000?style=flat&logoColor=394148&logo=javascript&color=fac60c) ► **51.1%**
 
 ## What I Did
 To get this project started, I broke everything down to smaller chunks. I had a Google doc with an ordered, step-by-step list of what I want to accomplish to bring this online Etch-A-Sketch to life. 
